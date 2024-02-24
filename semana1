@@ -1,0 +1,126 @@
+namespace ProyectoCompleto
+{
+    class Program
+    {
+        static void Main(string)
+        {
+            // Conversión de tipos
+            // Entero a decimal
+            int entero = 10;
+            decimal decimalConvertido = Convert.ToDecimal(entero);
+            Console.WriteLine($"Entero convertido a decimal: {decimalConvertido}");
+
+            // Decimal a flotante
+            decimal decimalOriginal = 10.5m; // La 'm' indica que es un decimal
+            float flotanteConvertido = (float)decimalOriginal;
+            Console.WriteLine($"Decimal convertido a flotante: {flotanteConvertido}");
+
+            // Flotante a entero
+            float flotanteOriginal = 10.7f; // La 'f' indica que es un flotante
+            int enteroConvertido = (int)flotanteOriginal;
+            Console.WriteLine($"Flotante convertido a entero: {enteroConvertido}");
+
+            // Caracter a entero
+            char caracter = 'A';
+            int enteroDesdeCaracter = (int)caracter;
+            Console.WriteLine($"Caracter convertido a entero: {enteroDesdeCaracter}");
+
+            // Entero a caracter
+            int enteroParaCaracter = 65;
+            char caracterDesdeEntero = (char)enteroParaCaracter;
+            Console.WriteLine($"Entero convertido a caracter: {caracterDesdeEntero}");
+
+            // Operaciones con tipos de datos
+            // Suma de dos enteros
+            int num1 = 5;
+            int num2 = 3;
+            int suma = num1 + num2;
+            Console.WriteLine($"La suma de {num1} y {num2} es: {suma}");
+
+            // Resta de dos decimales
+            decimal decimal1 = 10.5m;
+            decimal decimal2 = 3.2m;
+            decimal resta = decimal1 - decimal2;
+            Console.WriteLine($"La resta de {decimal1} y {decimal2} es: {resta}");
+
+            // Multiplicación de dos flotantes
+            float flotante1 = 3.5f;
+            float flotante2 = 2.5f;
+            float multiplicacion = flotante1 * flotante2;
+            Console.WriteLine($"La multiplicación de {flotante1} y {flotante2} es: {multiplicacion}");
+
+            // División de dos enteros
+            int dividendo = 10;
+            int divisor = 3;
+            int division = dividendo / divisor;
+            Console.WriteLine($"La división de {dividendo} y {divisor} es: {division}");
+
+            // Módulo de dos enteros
+            int num3 = 10;
+            int num4 = 3;
+            int modulo = num3 % num4;
+            Console.WriteLine($"El módulo de {num3} y {num4} es: {modulo}");
+
+            // Uso de char y string
+            // Mayúsculas
+            Console.WriteLine("Ingrese una cadena de texto:");
+            string texto = Console.ReadLine();
+            Console.WriteLine($"Texto en mayúsculas: {texto.ToUpper()}");
+
+            // Minúsculas
+            Console.WriteLine($"Texto en minúsculas: {texto.ToLower()}");
+
+            // Al revés
+            char[] caracteres = texto.ToCharArray();
+            Array.Reverse(caracteres);
+            string textoAlReves = new string(caracteres);
+            Console.WriteLine($"Texto al revés: {textoAlReves}");
+
+            // Buscar palabra
+            Console.WriteLine("Ingrese una palabra para buscar:");
+            string palabraBuscar = Console.ReadLine();
+            bool contienePalabra = texto.Contains(palabraBuscar);
+            Console.WriteLine($"La palabra '{palabraBuscar}' {(contienePalabra ? "sí" : "no")} está en el texto.");
+
+            // Contar vocales
+            int contadorVocales = 0;
+            foreach (char c in texto.ToLower())
+            {
+                if ("aeiou".Contains(c))
+                {
+                    contadorVocales++;
+                }
+            }
+            Console.WriteLine($"El texto tiene {contadorVocales} vocales.");
+
+            // Uso de tipos de datos numéricos
+            // Área de un triángulo
+            double baseTriangulo = 5;
+            double alturaTriangulo = 3;
+            double areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+            Console.WriteLine($"El área del triángulo es: {areaTriangulo}");
+
+            // Volumen de una esfera
+            double radioEsfera = 3;
+            double volumenEsfera = (4.0 / 3.0) * Math.PI * Math.Pow(radioEsfera, 3);
+            Console.WriteLine($"El volumen de la esfera es: {volumenEsfera}");
+
+            // Distancia entre dos puntos
+            double x1 = 1, y1 = 2, x2 = 4, y2 = 6;
+            double distancia = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+            Console.WriteLine($"La distancia entre los puntos ({x1},{y1}) y ({x2},{y2}) es: {distancia}");
+
+            // Conversión de Celsius a Fahrenheit
+            double temperaturaCelsius = 20;
+            double temperaturaFahrenheit = (temperaturaCelsius * 9 / 5) + 32;
+            Console.WriteLine($"La temperatura {temperaturaCelsius}°C en Fahrenheit es: {temperaturaFahrenheit}°F");
+
+            // Conversión de Fahrenheit a Celsius
+            temperaturaFahrenheit = 68;
+            temperaturaCelsius = (temperaturaFahrenheit - 32) * 5 / 9;
+            Console.WriteLine($"La temperatura {temperaturaFahrenheit}°F en Celsius es: {temperaturaCelsius}°C");
+
+            Console.ReadLine(); // Espera a que el usuario presione Enter antes de cerrar la consola
+        }
+    }
+}
